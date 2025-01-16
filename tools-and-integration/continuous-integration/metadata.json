@@ -1,0 +1,8 @@
+{
+  "slug": "continuous-integration",
+  "title": "持续集成",
+  "sequence": 3,
+  "description": "介绍 Git 与持续集成系统的集成",
+  "keywords": ["git", "CI", "持续集成", "自动化"],
+  "estimatedTime": "75 minutes"
+}

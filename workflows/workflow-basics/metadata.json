@@ -1,0 +1,8 @@
+{
+  "slug": "workflow-basics",
+  "title": "工作流基础",
+  "sequence": 1,
+  "description": "了解 Git 工作流的基本概念和原则",
+  "keywords": ["git", "workflow", "基础", "原则"],
+  "estimatedTime": "45 minutes"
+}

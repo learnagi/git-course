@@ -1,0 +1,13 @@
+{
+  "slug": "security",
+  "title": "Git 安全性",
+  "sequence": 7,
+  "description": "学习 Git 的安全最佳实践和防护措施",
+  "keywords": ["git", "security", "安全", "最佳实践"],
+  "sections": [
+    "security-basics",
+    "credentials",
+    "sensitive-data",
+    "practice"
+  ]
+}

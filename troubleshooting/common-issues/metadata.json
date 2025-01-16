@@ -1,0 +1,8 @@
+{
+  "slug": "common-issues",
+  "title": "常见问题",
+  "sequence": 1,
+  "description": "学习诊断和解决 Git 常见问题",
+  "keywords": ["git", "troubleshooting", "common issues", "常见问题"],
+  "estimatedTime": "45 minutes"
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "security-basics",
+  "title": "安全基础",
+  "sequence": 1,
+  "description": "了解 Git 安全的基本概念和原则",
+  "keywords": ["git", "security", "基础", "原则"],
+  "estimatedTime": "45 minutes"
+}

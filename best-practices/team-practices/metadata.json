@@ -1,0 +1,8 @@
+{
+  "slug": "team-practices",
+  "title": "团队最佳实践",
+  "sequence": 2,
+  "description": "学习团队协作中的 Git 最佳实践",
+  "keywords": ["git", "team", "collaboration", "团队协作"],
+  "estimatedTime": "60 minutes"
+}

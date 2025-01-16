@@ -1,0 +1,8 @@
+{
+  "slug": "practice",
+  "title": "扩展学习练习",
+  "sequence": 3,
+  "description": "通过实践练习掌握 Git 扩展应用",
+  "keywords": ["git", "practice", "扩展", "练习"],
+  "estimatedTime": "90 minutes"
+}

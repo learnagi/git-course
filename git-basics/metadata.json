@@ -1,0 +1,8 @@
+{
+  "slug": "git-basics",
+  "title": "Git 基础入门",
+  "description": "本章介绍 Git 的基本概念、安装配置和入门知识",
+  "keywords": ["git", "版本控制", "基础", "入门"],
+  "author": "Codeium",
+  "lastUpdated": "2025-01-16"
+}

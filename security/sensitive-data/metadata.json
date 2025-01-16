@@ -1,0 +1,8 @@
+{
+  "slug": "sensitive-data",
+  "title": "敏感数据处理",
+  "sequence": 3,
+  "description": "学习如何处理和保护 Git 仓库中的敏感数据",
+  "keywords": ["git", "sensitive", "敏感数据", "保护"],
+  "estimatedTime": "60 minutes"
+}

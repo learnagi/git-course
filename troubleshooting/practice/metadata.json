@@ -1,0 +1,8 @@
+{
+  "slug": "practice",
+  "title": "故障排除练习",
+  "sequence": 3,
+  "description": "通过实践练习掌握 Git 故障排除",
+  "keywords": ["git", "troubleshooting", "practice", "练习"],
+  "estimatedTime": "90 minutes"
+}

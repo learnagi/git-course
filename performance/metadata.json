@@ -1,0 +1,12 @@
+{
+  "slug": "performance",
+  "title": "性能优化",
+  "sequence": 9,
+  "description": "学习 Git 性能优化的方法和技巧",
+  "keywords": ["git", "performance", "optimization", "性能优化"],
+  "sections": [
+    "performance-basics",
+    "large-repos",
+    "practice"
+  ]
+}

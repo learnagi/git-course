@@ -1,0 +1,8 @@
+{
+  "slug": "large-repos",
+  "title": "大型仓库管理",
+  "sequence": 2,
+  "description": "学习管理大型 Git 仓库的技巧和方法",
+  "keywords": ["git", "large repository", "management", "大型仓库"],
+  "estimatedTime": "60 minutes"
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "advanced-features",
+  "title": "高级特性",
+  "sequence": 1,
+  "description": "学习 Git 的高级特性和功能",
+  "keywords": ["git", "advanced features", "高级特性"],
+  "estimatedTime": "60 minutes"
+}

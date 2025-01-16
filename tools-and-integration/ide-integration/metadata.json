@@ -1,0 +1,8 @@
+{
+  "slug": "ide-integration",
+  "title": "IDE 集成",
+  "sequence": 2,
+  "description": "详细介绍主流 IDE 的 Git 集成功能",
+  "keywords": ["git", "IDE", "集成", "开发工具"],
+  "estimatedTime": "60 minutes"
+}

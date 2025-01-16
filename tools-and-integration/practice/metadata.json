@@ -1,0 +1,8 @@
+{
+  "slug": "practice",
+  "title": "实践练习",
+  "sequence": 4,
+  "description": "通过实践练习掌握工具和集成的使用",
+  "keywords": ["git", "练习", "实践", "工具"],
+  "estimatedTime": "90 minutes"
+}

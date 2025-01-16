@@ -1,0 +1,8 @@
+{
+  "slug": "integrations",
+  "title": "集成应用",
+  "sequence": 2,
+  "description": "学习 Git 与其他工具的集成应用",
+  "keywords": ["git", "integrations", "集成", "应用"],
+  "estimatedTime": "60 minutes"
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "workflow-practices",
+  "title": "工作流最佳实践",
+  "sequence": 1,
+  "description": "学习 Git 工作流的最佳实践和建议",
+  "keywords": ["git", "workflow", "best practices", "工作流"],
+  "estimatedTime": "45 minutes"
+}
