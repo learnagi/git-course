@@ -1,8 +1,0 @@
-{
-  "slug": "introduction",
-  "title": "Git 简介",
-  "sequence": 1,
-  "description": "介绍版本控制的概念、Git 的历史和特点",
-  "keywords": ["git", "版本控制", "历史", "特点"],
-  "estimatedTime": "30 minutes"
-}

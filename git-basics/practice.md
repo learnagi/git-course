@@ -1,3 +1,12 @@
+---
+title: "Git 实践练习"
+slug: "git-practice"
+sequence: 3
+description: "通过实际操作练习来掌握 Git 的基本命令和工作流程"
+is_published: true
+estimated_minutes: 30
+---
+
 # Git 实践练习
 
 在本节中，我们将通过动手练习来掌握之前学习的 Git 基础命令。跟随以下练习来加深你对 Git 基础知识的理解。

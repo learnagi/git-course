@@ -1,3 +1,12 @@
+---
+title: "Git 安装指南"
+slug: "git-installation"
+sequence: 1
+description: "详细介绍如何在 Windows、macOS 和 Linux 系统上安装和配置 Git"
+is_published: true
+estimated_minutes: 20
+---
+
 # Git 安装指南
 
 本指南将帮助你在不同的操作系统上安装 Git。我们将介绍 Windows、macOS 和 Linux 系统的安装步骤。
