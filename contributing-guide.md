@@ -1,5 +1,25 @@
 # Contributing Guide
 
+## Brand Identity Guidelines
+
+1. **Domain Usage**
+   - Use `git.fun` as the example domain
+   - Example: `support@git.fun`, `https://git.fun`
+
+2. **Author Information**
+   - Use "Git Fun" as the author name
+   - Use `support@git.fun` as the email
+   - Example: `Git Fun <support@git.fun>`
+
+3. **Commit Messages**
+   - Include project reference: `(git.fun#1234)`
+   - Example: `fix: resolve login issue (git.fun#1234)`
+
+4. **Documentation**
+   - Use consistent branding in examples
+   - Maintain professional tone
+   - Follow brand style guide
+
 ## Directory Structure
 
 ```
@@ -170,4 +190,4 @@ If you have questions or need assistance:
 3. Contact project maintainers
 4. Open an issue for discussion
 
-Remember: Quality content helps everyone learn better! 
+Remember: Quality content helps everyone learn better!

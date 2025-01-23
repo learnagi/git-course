@@ -1,8 +1,0 @@
-{
-  "slug": "advanced-issues",
-  "title": "高级问题",
-  "sequence": 2,
-  "description": "学习诊断和解决 Git 高级问题",
-  "keywords": ["git", "troubleshooting", "advanced issues", "高级问题"],
-  "estimatedTime": "60 minutes"
-}

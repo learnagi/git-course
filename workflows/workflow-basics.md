@@ -1,128 +1,81 @@
 ---
-title: "工作流基础"
+title: "Git 工作流基础"
 slug: "workflow-basics"
-sequence: 1
-description: "了解 Git 工作流的基本概念和常见模式"
+description: "了解 Git 工作流的基本概念和通用实践"
 is_published: true
-estimated_minutes: 15
+estimated_minutes: 45
 ---
 
 # Git 工作流基础
-
-本节将介绍 Git 工作流的基本概念和常见模式，帮助你理解如何在团队中有效使用 Git。
 
 ## 什么是工作流？
 
 工作流是团队在使用版本控制系统时遵循的一套规范和流程，它定义了如何组织分支、何时合并代码以及如何进行代码审查等。
 
-## 常见工作流模式
+## 常见工作流类型
 
-### 集中式工作流
+1. 集中式工作流
+   - 所有开发都在主分支进行
+   - 适合小型团队和简单项目
+   - 容易理解和实施
 
-最简单的工作流模式，所有开发都在主分支上进行：
+2. 功能分支工作流
+   - 每个新功能在独立分支开发
+   - 通过 Pull Request 进行代码审查
+   - 保持主分支代码稳定
 
-```bash
-# 获取最新代码
-git pull origin main
+3. GitFlow 工作流
+   - 适合有计划发布周期的项目
+   - 维护多个长期分支
+   - 严格的分支管理规范
 
-# 提交修改
-git commit -m "feature: add new functionality"
+4. 主干开发工作流
+   - 持续集成到主干分支
+   - 使用特性开关控制功能
+   - 快速迭代和部署
 
-# 推送到远程
-git push origin main
-```
+## 选择合适的工作流
 
-### 功能分支工作流
+在选择工作流时，需要考虑以下因素：
 
-每个新功能都在专门的分支上开发：
-
-```bash
-# 创建功能分支
-git checkout -b feature/new-feature
-
-# 开发完成后合并到主分支
-git checkout main
-git merge feature/new-feature
-```
+1. 团队规模和经验
+2. 项目复杂度
+3. 发布周期
+4. 部署需求
+5. 代码审查流程
 
 ## 工作流最佳实践
 
-1. 保持分支同步
-   ```bash
-   # 定期同步主分支
-   git checkout main
-   git pull origin main
-   git checkout feature-branch
-   git rebase main
-   ```
-
-2. 经常提交小的改动
-   ```bash
-   # 小步提交
-   git add src/feature.js
-   git commit -m "feat: add user validation"
-   ```
-
-3. 写清晰的提交信息
-   ```bash
-   # 使用约定式提交
-   git commit -m "feat: add login feature"
-   git commit -m "fix: resolve user session bug"
-   git commit -m "docs: update API documentation"
-   ```
-
-4. 在合并前进行代码审查
-   - 创建拉取请求
-   - 指定审查者
-   - 解决反馈意见
-   - 获得批准后合并
-
-5. 及时删除已合并的分支
-   ```bash
-   # 删除已合并的本地分支
-   git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
-   ```
-
-## 分支管理策略
-
-### 分支命名规范
+### 分支管理
 
 ```bash
-# 功能分支
-feature/user-authentication
-feature/payment-integration
+# 创建新分支
+git checkout -b feature/new-feature
 
-# 修复分支
-fix/login-error
-fix/payment-timeout
-
-# 发布分支
-release/v1.0.0
-release/v1.1.0
+# 定期同步主分支更新
+git checkout feature/new-feature
+git rebase main
 ```
 
-### 版本发布流程
+### 提交规范
 
-1. 创建发布分支
-```bash
-git checkout -b release/v1.0.0 develop
-```
+1. 写清晰的提交信息
+2. 保持提交粒度合适
+3. 及时提交代码变更
 
-2. 准备发布
-```bash
-# 更新版本号
-npm version 1.0.0
+### 代码审查
 
-# 提交更改
-git commit -m "chore: bump version to 1.0.0"
-```
+1. 使用 Pull Request 进行代码审查
+2. 遵循团队代码规范
+3. 及时响应审查意见
 
-3. 完成发布
-```bash
-# 合并到主分支
-git checkout main
-git merge release/v1.0.0
+## 工作流工具
 
-# 打标签
-git tag -a v1.0.0 -m "Release version 1.0.0"
-```
+1. Git 命令行工具
+2. 图形化界面工具
+3. 代码托管平台
+4. 持续集成工具
+
+## 总结
+
+选择合适的工作流对于提高团队协作效率至关重要。团队应该根据自身特点选择或调整工作流程，并在实践中不断优化和改进。

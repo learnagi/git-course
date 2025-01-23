@@ -1,8 +1,0 @@
-{
-  "slug": "gitflow",
-  "title": "GitFlow 工作流",
-  "sequence": 2,
-  "description": "深入学习 GitFlow 工作流的使用方法",
-  "keywords": ["git", "gitflow", "workflow", "分支"],
-  "estimatedTime": "60 minutes"
-}

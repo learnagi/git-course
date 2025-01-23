@@ -1,8 +1,0 @@
-{
-  "slug": "trunk-based",
-  "title": "主干开发工作流",
-  "sequence": 3,
-  "description": "学习主干开发工作流的使用方法",
-  "keywords": ["git", "trunk-based", "workflow", "主干开发"],
-  "estimatedTime": "60 minutes"
-}

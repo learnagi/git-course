@@ -1,51 +1,68 @@
 ---
-title: "撤销操作"
+title: "Git 撤销操作"
 slug: "undo-operations"
-sequence: 3
-description: "学习 Git 中的各种撤销操作，包括撤销修改、重置提交等"
-is_published: true
-estimated_minutes: 25
+description: "学习 Git 中的各种撤销操作，包括撤销修改、重置提交、变基操作等高级撤销功能"
+author: "Git Fun <support@git.fun>"
+status: "published"
+created_at: "2024-01-01"
+updated_at: "2024-01-01"
+estimated_minutes: 30
 ---
 
 # Git 撤销操作
 
-在使用 Git 过程中，经常需要撤销某些操作。本节将介绍 Git 中的各种撤销命令及其使用场景。
+在使用 Git 过程中，经常需要撤销某些操作。本节将介绍 Git 中的各种撤销命令及其使用场景，帮助你更好地管理代码版本。
 
-## 撤销工作区修改
+## 学习目标
 
-### 撤销未暂存的修改
+- 掌握工作区和暂存区的撤销操作
+- 学习如何修改和撤销提交
+- 理解储藏（stash）的使用方法
+- 掌握高级撤销操作（变基、重置等）
+
+## 基础撤销操作
+
+### 撤销工作区修改
 
 1. 撤销单个文件的修改：
    ```bash
+   # 使用传统语法
    git checkout -- filename
-   # 或使用新语法
+   
+   # 使用新语法（推荐）
    git restore filename
    ```
 
 2. 撤销所有未暂存的修改：
    ```bash
+   # 使用传统语法
    git checkout .
-   # 或使用新语法
+   
+   # 使用新语法（推荐）
    git restore .
    ```
 
-### 撤销已暂存的修改
+### 撤销暂存区修改
 
 1. 取消暂存单个文件：
    ```bash
+   # 使用传统语法
    git reset HEAD filename
-   # 或使用新语法
+   
+   # 使用新语法（推荐）
    git restore --staged filename
    ```
 
 2. 取消所有暂存：
    ```bash
+   # 使用传统语法
    git reset HEAD
-   # 或使用新语法
+   
+   # 使用新语法（推荐）
    git restore --staged .
    ```
 
-## 修改提交
+## 提交操作
 
 ### 修改最后一次提交
 
@@ -76,18 +93,20 @@ estimated_minutes: 25
    git reset --hard <commit-hash>
    ```
 
-## 暂存操作
+## 储藏操作
 
 ### 储藏更改
 
 1. 储藏当前更改：
    ```bash
+   # 快速储藏
    git stash
-   ```
-
-2. 储藏时添加说明：
-   ```bash
+   
+   # 储藏时添加说明
    git stash save "修改说明"
+   
+   # 储藏未跟踪的文件
+   git stash -u
    ```
 
 ### 管理储藏
@@ -103,7 +122,10 @@ estimated_minutes: 25
    git stash apply
    
    # 应用指定的储藏
-   git stash apply stash@{n}
+   git stash apply stash@{2}
+   
+   # 应用并删除储藏
+   git stash pop
    ```
 
 3. 删除储藏：
@@ -112,33 +134,10 @@ estimated_minutes: 25
    git stash drop
    
    # 删除指定的储藏
-   git stash drop stash@{n}
-   ```
-
-## 分支操作撤销
-
-### 删除分支
-
-1. 删除已合并的分支：
-   ```bash
-   git branch -d branch_name
-   ```
-
-2. 强制删除分支：
-   ```bash
-   git branch -D branch_name
-   ```
-
-### 恢复已删除的分支
-
-1. 查找分支的最后一次提交：
-   ```bash
-   git reflog
-   ```
-
-2. 基于提交创建新分支：
-   ```bash
-   git branch branch_name <commit-hash>
+   git stash drop stash@{2}
+   
+   # 清除所有储藏
+   git stash clear
    ```
 
 ## 高级撤销操作
@@ -161,55 +160,29 @@ estimated_minutes: 25
 
 1. 清理未跟踪的文件：
    ```bash
-   # 预览要清理的文件
+   # 查看将被删除的文件
    git clean -n
    
-   # 实际清理文件
+   # 删除未跟踪的文件
    git clean -f
-   ```
-
-2. 清理包括目录：
-   ```bash
+   
+   # 删除未跟踪的文件和目录
    git clean -fd
    ```
 
 ## 最佳实践
 
-1. **安全原则**
-   - 在重要操作前创建备份分支
-   - 使用 `--dry-run` 预览效果
-   - 谨慎使用 `--hard` 选项
+1. **谨慎使用强制操作**
+   - 使用 `--hard` 前要确认
+   - 重要操作前先备份
+   - 避免强制推送到远程
 
-2. **提交管理**
-   - 及时提交有意义的更改
-   - 保持提交历史清晰
-   - 适当使用 `git revert`
+2. **合理使用储藏**
+   - 切换分支前储藏更改
+   - 为储藏添加清晰说明
+   - 及时清理不需要的储藏
 
-3. **储藏使用**
-   - 为储藏添加清晰的说明
-   - 及时处理储藏的内容
-   - 定期清理不需要的储藏
-
-## 常见问题
-
-1. 意外的重置
-   - 使用 reflog 恢复
-   - 检查重要文件的备份
-   - 确认命令参数
-
-2. 储藏冲突
-   - 解决冲突后重新储藏
-   - 使用不同的储藏说明
-   - 分步骤应用储藏
-
-3. 分支误删
-   - 使用 reflog 查找记录
-   - 及时创建备份分支
-   - 谨慎使用强制删除
-
-## 练习
-
-1. 练习不同类型的撤销操作
-2. 使用储藏管理临时更改
-3. 尝试交互式变基
-4. 恢复误删的提交或分支 
+3. **变基注意事项**
+   - 不要变基已推送的提交
+   - 在变基前创建备份分支
+   - 解决冲突后继续变基
