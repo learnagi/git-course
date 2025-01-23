@@ -1,7 +1,7 @@
 ---
 title: "Git 安装指南"
 slug: "git-installation"
-sequence: 1
+sequence: 2
 description: "详细介绍如何在 Windows、macOS 和 Linux 系统上安装和配置 Git"
 is_published: true
 estimated_minutes: 20

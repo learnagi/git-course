@@ -1,8 +1,0 @@
-{
-  "slug": "gui-tools",
-  "title": "图形界面工具",
-  "sequence": 1,
-  "description": "介绍常用的 Git 图形界面工具",
-  "keywords": ["git", "GUI", "图形界面", "工具"],
-  "estimatedTime": "45 minutes"
-}

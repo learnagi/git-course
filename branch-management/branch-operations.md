@@ -7,6 +7,15 @@ is_published: true
 estimated_minutes: 20
 ---
 
+---
+title: "Git 分支操作"
+slug: "branch-operations"
+sequence: 2
+description: "学习 Git 分支的基本操作，包括创建、切换、合并等命令"
+is_published: true
+estimated_minutes: 20
+---
+
 # Git 分支操作命令
 
 本节将介绍 Git 分支的各种操作命令，帮助你熟练使用分支功能。
@@ -228,4 +237,4 @@ git log --graph --oneline --all
 3. 远程分支操作
    - 推送本地分支
    - 跟踪远程分支
-   - 删除远程分支 
+   - 删除远程分支
