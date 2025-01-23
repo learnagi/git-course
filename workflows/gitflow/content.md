@@ -256,6 +256,70 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+      - name: Run linters
+        run: |
+          npm run lint
+          npm run prettier
+```
+
+2. 自动化测试
+```javascript
+// test/feature.test.js
+describe('Feature Branch', () => {
+  test('should merge successfully', () => {
+    expect(mergeBranch('feature/test')).toBeTruthy();
+  });
+
+  test('should fail on conflicts', () => {
+    expect(mergeBranch('feature/conflict')).toBeFalsy();
+  });
+});
+```
+
+3. 质量控制
+```yaml
+# .github/workflows/quality.yml
+name: Quality Check
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Code Coverage
+        run: npm run coverage
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@master
+```
+
+1. GitHub Actions
+```yaml
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches: [ main, develop, 'feature/*' ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
       - name: Run tests
         run: npm test
 ```

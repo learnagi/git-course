@@ -1,8 +1,0 @@
-{
-  "slug": "practice",
-  "title": "性能优化实践",
-  "sequence": 3,
-  "description": "通过实践练习掌握 Git 性能优化",
-  "keywords": ["git", "performance", "practice", "优化实践"],
-  "estimatedTime": "90 minutes"
-}

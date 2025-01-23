@@ -56,3 +56,87 @@ on:
 ### 高级功能
 
 1. 矩阵构建
+```yaml
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node-version: [14.x, 16.x, 18.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm test
+```
+
+2. 工作流调度
+```yaml
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每天午夜运行
+  workflow_dispatch:     # 手动触发
+```
+
+## Jenkins
+
+### 基本配置
+
+1. Jenkinsfile
+```groovy
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
+```
+
+2. 多分支流水线
+```groovy
+properties([
+    pipelineTriggers([pollSCM('H/15 * * * *')]),
+    parameters([string(name: 'BRANCH_NAME', defaultValue: 'main')])
+])
+
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: params.BRANCH_NAME, url: 'https://github.com/user/repo.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
+    }
+}
+```

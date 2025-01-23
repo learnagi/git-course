@@ -1,6 +1,0 @@
-{
-  "title": "Git 安全性",
-  "slug": "security",
-  "description": "学习 Git 的安全最佳实践和防护措施",
-  "sections": ["security-basics", "credentials", "sensitive-data", "practice"]
-}

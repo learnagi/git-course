@@ -1,8 +1,0 @@
-{
-  "slug": "performance-basics",
-  "title": "性能优化基础",
-  "sequence": 1,
-  "description": "了解 Git 性能优化的基本概念和方法",
-  "keywords": ["git", "performance", "optimization", "基础优化"],
-  "estimatedTime": "45 minutes"
-}

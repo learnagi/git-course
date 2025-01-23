@@ -131,6 +131,81 @@ npm run lint
 npm run build
 ```
 
+### 2. 部署策略
+
+1. 蓝绿部署
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy Blue
+        if: github.ref == 'refs/heads/main'
+        run: |
+          deploy-blue.sh
+          health-check.sh
+          switch-traffic.sh
+```
+
+2. 金丝雀发布
+```yaml
+name: Canary Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Canary
+        run: |
+          deploy-canary.sh 10%
+          monitor-metrics.sh
+          rollout-full.sh
+```
+
+1. GitHub Actions
+```yaml
+# .github/workflows/ci.yml
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: npm test
+```
+
+2. 自动化测试
+```bash
+# 运行测试
+npm test
+
+# 代码检查
+npm run lint
+
+# 构建检查
+npm run build
+```
+
 ### 2. 部署流程
 
 1. 持续部署

@@ -48,7 +48,81 @@ git merge feature/new-feature
 ## 工作流最佳实践
 
 1. 保持分支同步
+   ```bash
+   # 定期同步主分支
+   git checkout main
+   git pull origin main
+   git checkout feature-branch
+   git rebase main
+   ```
+
 2. 经常提交小的改动
+   ```bash
+   # 小步提交
+   git add src/feature.js
+   git commit -m "feat: add user validation"
+   ```
+
 3. 写清晰的提交信息
+   ```bash
+   # 使用约定式提交
+   git commit -m "feat: add login feature"
+   git commit -m "fix: resolve user session bug"
+   git commit -m "docs: update API documentation"
+   ```
+
 4. 在合并前进行代码审查
+   - 创建拉取请求
+   - 指定审查者
+   - 解决反馈意见
+   - 获得批准后合并
+
 5. 及时删除已合并的分支
+   ```bash
+   # 删除已合并的本地分支
+   git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+   ```
+
+## 分支管理策略
+
+### 分支命名规范
+
+```bash
+# 功能分支
+feature/user-authentication
+feature/payment-integration
+
+# 修复分支
+fix/login-error
+fix/payment-timeout
+
+# 发布分支
+release/v1.0.0
+release/v1.1.0
+```
+
+### 版本发布流程
+
+1. 创建发布分支
+```bash
+git checkout -b release/v1.0.0 develop
+```
+
+2. 准备发布
+```bash
+# 更新版本号
+npm version 1.0.0
+
+# 提交更改
+git commit -m "chore: bump version to 1.0.0"
+```
+
+3. 完成发布
+```bash
+# 合并到主分支
+git checkout main
+git merge release/v1.0.0
+
+# 打标签
+git tag -a v1.0.0 -m "Release version 1.0.0"
+```
