@@ -11,6 +11,26 @@ estimated_minutes: 30
 
 在本节中，我们将通过动手练习来掌握之前学习的 Git 基础命令。跟随以下练习来加深你对 Git 基础知识的理解。
 
+## Git 基本概念图解
+
+### 工作区、暂存区和版本库
+
+![Git 工作区示意图](./images/git-workspace.png)
+
+上图展示了 Git 的三个主要工作区域：
+- 工作区（Working Directory）：你直接编辑的文件所在的区域
+- 暂存区（Staging Area）：暂存待提交的修改
+- 版本库（Repository）：保存项目的所有历史版本
+
+### Git 工作流程
+
+![Git 工作流程图](./images/git-workflow.png)
+
+这个流程图展示了 Git 的基本工作流程：
+1. 在工作区修改文件
+2. 将修改添加到暂存区
+3. 将暂存区的修改提交到版本库
+
 ## 练习1：初始化仓库
 
 1. 创建一个新的项目目录：
@@ -23,11 +43,13 @@ estimated_minutes: 30
    ```bash
    git init
    ```
+   > 提示：这个命令会创建一个 .git 目录，用于存储仓库的所有版本信息
 
 3. 检查仓库状态：
    ```bash
    git status
    ```
+   > 养成经常使用 git status 检查仓库状态的好习惯
 
 ## 练习2：创建你的第一个提交
 
@@ -40,13 +62,27 @@ estimated_minutes: 30
    ```bash
    git add README.md
    ```
+   > 使用 `git add .` 可以暂存所有修改的文件
 
 3. 提交更改：
    ```bash
    git commit -m "初始提交：添加 README.md"
    ```
+   > 提交信息应该简洁明了，说明本次提交的主要内容
+
+### 理解提交过程
+
+![Git 提交过程](./images/git-commit-process.png)
+
+上图展示了文件从工作区到版本库的完整过程。
 
 ## 练习3：使用分支
+
+### 分支的概念
+
+![Git 分支示意图](./images/git-branch.png)
+
+分支允许你在不影响主分支的情况下进行开发。
 
 1. 创建新分支：
    ```bash
@@ -73,7 +109,17 @@ estimated_minutes: 30
    git merge feature-branch
    ```
 
+### 分支合并过程
+
+![Git 合并过程](./images/git-merge.png)
+
+上图展示了分支合并的过程和可能出现的冲突情况。
+
 ## 练习4：远程仓库操作
+
+### 远程仓库工作流
+
+![Git 远程仓库](./images/git-remote.png)
 
 1. 添加远程仓库（替换为你的仓库 URL）：
    ```bash
@@ -84,6 +130,7 @@ estimated_minutes: 30
    ```bash
    git push -u origin main
    ```
+   > `-u` 参数设置跟踪关系，之后可以直接使用 `git push`
 
 3. 从远程拉取更改：
    ```bash
@@ -100,6 +147,12 @@ estimated_minutes: 30
 4. 克隆一个现有仓库并做出贡献
 5. 创建一个 `.gitignore` 文件并测试忽略文件功能
 
+### 合并冲突解决示例
+
+![Git 冲突解决](./images/git-conflict.png)
+
+当两个分支修改了同一个文件的同一部分时，合并时会产生冲突。上图展示了如何解决冲突。
+
 ## 实际场景练习
 
 ### 场景1：多人协作
@@ -113,6 +166,8 @@ estimated_minutes: 30
 2. 使用 `git log` 查看历史
 3. 使用 `git reset` 回退到指定版本
 4. 使用 `git revert` 撤销某个提交
+
+![Git 版本回退](./images/git-reset.png)
 
 ### 场景3：分支管理
 1. 创建功能分支（feature branch）
@@ -130,6 +185,10 @@ estimated_minutes: 30
 - 比较工作区和暂存区的差异：`git diff`
 - 比较暂存区和最新提交的差异：`git diff --cached`
 - 修改最后一次提交信息：`git commit --amend`
+
+### 常见错误图解
+
+![Git 常见错误](./images/git-errors.png)
 
 ## 进阶技巧
 
@@ -173,6 +232,8 @@ estimated_minutes: 30
 - 重要的修改建议创建 Pull Request/Merge Request 进行代码审查
 
 ## 推荐的工作流程
+
+![Git 推荐工作流程](./images/git-recommended-workflow.png)
 
 1. 更新本地代码
    ```bash
