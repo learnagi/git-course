@@ -2,6 +2,7 @@
 title: "工具和集成"
 slug: "tools-and-integration"
 description: "学习 Git 相关的工具和第三方集成"
+sequence: 20
 is_published: true
 estimated_minutes: 30
 ---
